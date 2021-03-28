@@ -5,7 +5,7 @@ import com.cloudera.frisch.randomdatagen.config.PropertiesLoader;
 import com.cloudera.frisch.randomdatagen.model.Model;
 import com.cloudera.frisch.randomdatagen.model.OptionsConverter;
 import com.cloudera.frisch.randomdatagen.model.Row;
-import com.hortonworks.registries.schemaregistry.client.SchemaRegistryClient;
+//import com.hortonworks.registries.schemaregistry.client.SchemaRegistryClient;
 import org.apache.avro.Schema;
 import org.apache.avro.generic.GenericRecord;
 import org.apache.hadoop.conf.Configuration;
@@ -39,7 +39,7 @@ public class KafkaSink implements SinkInterface {
         props.put(ProducerConfig.ACKS_CONFIG, "all");
         props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringSerializer");
 
-        if(PropertiesLoader.getProperty("kafka.messages").equalsIgnoreCase("avro")) {
+       /* if(PropertiesLoader.getProperty("kafka.messages").equalsIgnoreCase("avro")) {
           props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,
               "com.hortonworks.registries.schemaregistry.serdes.avro.kafka.KafkaAvroSerializer");
           props.put(
@@ -50,6 +50,7 @@ public class KafkaSink implements SinkInterface {
           props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,
               "org.apache.kafka.common.serialization.StringSerializer");
         }
+        */
 
         String securityProtocol = PropertiesLoader.getProperty("kafka.security.protocol");
         props.put(CommonClientConfigs.SECURITY_PROTOCOL_CONFIG, securityProtocol);

@@ -1,0 +1,43 @@
+{
+  "Fields": [
+    {
+      "name": "id",
+      "type": "LONG"
+    },
+    {
+      "name": "title_t",
+      "type": "STRING"
+    },
+    {
+      "name": "author_s",
+      "type": "STRING"
+    }],
+  "Table_Names": [
+    {"HDFS_FILE_PATH": "/user/dev/books/"},
+    {"HDFS_FILE_NAME": "book"},
+    {"HIVE_HDFS_FILE_PATH": "/tmp/book_hive/"},
+    {"HBASE_TABLE_NAME": "book"},
+    {"HBASE_NAMESPACE": "fd"},
+    {"KAFKA_TOPIC": "book"},
+    {"OZONE_VOLUME": "book"},
+    {"SOLR_COLLECTION": "book"},
+    {"HIVE_DATABASE": "fake_data"},
+    {"HIVE_TABLE_NAME":  "book"},
+    {"KUDU_TABLE_NAME":  "book"},
+    {"LOCAL_FILE_PATH":  "/root/fake_data/"},
+    {"LOCAL_FILE_NAME":  "book"},
+    {"AVRO_NAME":  "book"}
+  ],
+  "Primary_Keys": [
+    {"KAFKA_MSG_KEY": "membership"},
+    {"HBASE_PRIMARY_KEY":  "id"},
+    {"OZONE_BUCKET":  "id"},
+    {"OZONE_KEY":  "id"},
+    {"KUDU_HASH_KEYS":  "id"}
+  ],
+  "Options": [
+    {"HBASE_COLUMN_FAMILIES_MAPPING": "details:title_t,author_s;technicals:last_connection,membership,id"},
+    {"SOLR_SHARDS":  1},
+    {"SOLR_REPLICAS":  1}
+  ]
+}
